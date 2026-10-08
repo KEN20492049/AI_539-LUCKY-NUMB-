@@ -18,7 +18,7 @@
     font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
     background:radial-gradient(1200px 600px at 50% -10%,#3730a3 0%,transparent 60%),
                linear-gradient(160deg,var(--bg1),var(--bg2));
-    display:flex; justify-content:center; padding:32px 16px;
+    display:flex; justify-content:center; padding:32px 16px 88px;
   }
   .wrap{width:100%; max-width:560px}
   h1{margin:0; text-align:center; font-size:26px; letter-spacing:.04em}
@@ -85,9 +85,12 @@
     border-radius:99px; padding:8px 18px; font-size:13px; cursor:pointer;
   }
   .reset:hover{color:var(--text); border-color:var(--text)}
-  .note{
-    margin-top:22px; font-size:12px; line-height:1.7; color:var(--muted);
-    text-align:center; padding:0 6px;
+  /* 免責聲明：小字 (12px/16px)、淡灰色 #9ca3af，固定在網頁底部置中 */
+  .disclaimer{
+    position:fixed; left:50%; bottom:8px; transform:translateX(-50%); z-index:1;
+    width:calc(100vw - 24px); max-width:560px;
+    font-size:.75rem; line-height:1rem; color:#9ca3af;
+    text-align:center; pointer-events:none;
   }
   .final{text-align:center; margin-top:18px; min-height:24px; font-size:15px; color:var(--gold)}
 </style>
@@ -106,11 +109,13 @@
   <!-- 頁面內的一般廣告位：貼上你的 AdSense 廣告單元 -->
   <div id="pageAd" style="margin-top:20px"></div>
 
-  <p class="note">
-    ⚠️ 本工具僅供娛樂。彩券每期開獎為獨立隨機事件，過去號碼無法預測未來結果，
-    任何選號方式的中獎機率都相同。請理性購買、量力而為。
-  </p>
 </div>
+
+<!-- 免責聲明：固定在網頁底部置中 -->
+<footer class="disclaimer">
+  ⚠️ 本工具僅供娛樂。彩券每期開獎為獨立隨機事件，過去號碼無法預測未來結果，
+  任何選號方式的中獎機率都相同。請理性購買、量力而為。
+</footer>
 
 <!-- 廣告倒數彈層 -->
 <div class="overlay" id="overlay">
